@@ -78,6 +78,8 @@ void main() {
 let scene2d = MyVideoScene(size: bounds.size)
 scene2d.backgroundColor = .clear
 plane.firstMaterial?.diffuse.contents = scene2d
+plane.firstMaterial?.diffuse.contentsTransform = SCNMatrix4MakeScale(1, -1, 1)
+plane.firstMaterial?.diffuse.wrapT = .repeat
 
 sceneView.scene = scene
 PlaygroundPage.current.liveView = sceneView

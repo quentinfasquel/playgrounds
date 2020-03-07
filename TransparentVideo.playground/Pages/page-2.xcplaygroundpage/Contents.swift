@@ -1,4 +1,5 @@
-//: [Previous](@previous)
+//: # 2. Transparent Videos in SceneKit
+//: #### ← [Transparent Videos in SpriteKit](@previous)
 
 import AVFoundation
 import Foundation

@@ -1,14 +1,10 @@
-//: A SpriteKit based Playground
-//: [Previous](@previous)
-//: [Next](@next)
+//: # 1. Transparent Videos in SpriteKit
+//: #### → [Transparent Videos in SceneKit](@next)
 
-import PlaygroundSupport
 import AVFoundation
 import SpriteKit
+import PlaygroundSupport
 import UIKit
-
-
-//: ## Title
 
 class MyExampleScene: SKScene {
   
@@ -33,7 +29,7 @@ class MyExampleScene: SKScene {
 
     // An orange background color to show transparency
     backgroundColor = .orange
-
+    
     // Adding a `SKVideoNode` to display video in our scene
     let videoNode = SKVideoNode(avPlayer: player)
     videoNode.position = CGPoint(x: frame.midX, y: frame.midY)
@@ -66,20 +62,24 @@ void main() {
   }
 }
 
-let bounds = CGRect(x:0 , y:0, width: 640, height: 480)
+
 // Load the SKScene
-let sceneView = SKView(frame: bounds)
+let sceneBounds = CGRect(x: 0 , y: 0, width: 640, height: 480)
+let sceneView = SKView(frame: sceneBounds)
 sceneView.backgroundColor = .black
+
 let scene = MyExampleScene()
 scene.backgroundColor = .black
 // Set the scale mode to scale to fit the window
 scene.anchorPoint = .zero
-scene.size = sceneView.bounds.size
 scene.scaleMode = .aspectFill
+scene.size = sceneView.bounds.size
 
 // Note: do not use a SKTransition to present your scene
 //sceneView.presentScene(scene, transition: SKTransition.fade(withDuration: 1.0))
 
-sceneView.presentScene(scene)
-
+//#-hidden-code
 PlaygroundPage.current.liveView = sceneView
+sceneView.presentScene(scene)
+//#-end-hidden-code
+//: ### Next: **[Transparent Videos in SceneKit](@next)**
